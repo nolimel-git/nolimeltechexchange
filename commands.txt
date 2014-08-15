@@ -1,0 +1,39 @@
+ articles  =  posts
+ comments  =  comments
+ 
+ 
+ 
+ ==================================================
+ $ rake routes
+                     Prefix Verb   URI Pattern                            Controller#Action
+                   articles GET    /articles(.:format)                    articles#index
+                            POST   /articles(.:format)                    articles#create
+                new_article GET    /articles/new(.:format)                articles#new
+               edit_article GET    /articles/:id/edit(.:format)           articles#edit
+                    article GET    /articles/:id(.:format)                articles#show
+                            PATCH  /articles/:id(.:format)                articles#update
+                            PUT    /articles/:id(.:format)                articles#update
+                            DELETE /articles/:id(.:format)                articles#destroy
+                       root GET    /                                      nolimeltechexchange#index
+  nolimeltechexchange_about GET    /nolimeltechexchange/about(.:format)   nolimeltechexchange#about
+nolimeltechexchange_contact GET    /nolimeltechexchange/contact(.:format) nolimeltechexchange#contact
+
+
+$ rails generate model Article title:string text:text
+      invoke  active_record
+      create    db/migrate/20140814222552_create_articles.rb
+      create    app/models/article.rb
+      invoke    rspec
+      create      spec/models/article_spec.rb
+
+$ rake db:migrate
+
+
+$ rails generate model Comment commenter:string body:text article:references
+
+      invoke  active_record
+      create    db/migrate/20140814234413_create_comments.rb
+      create    app/models/comment.rb
+      invoke    rspec
+      create      spec/models/comment_spec.rb
+
