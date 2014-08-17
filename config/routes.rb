@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 		resources :comments
 		resources :subjects
 		resources :users
+		resources :sessions
 	end
 
 	# get 'nolimeltechexchange/index'
