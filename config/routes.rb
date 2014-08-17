@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 	resources :articles do
 		resources :comments
+		resources :subjects
+		resources :users
 	end
 
 	# get 'nolimeltechexchange/index'
